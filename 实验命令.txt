@@ -1,0 +1,6 @@
+启动仿真器
+roslaunch blueprint_exploration turtlebot_expl.launch
+启动探索
+rosservice call /StartExploration
+
+

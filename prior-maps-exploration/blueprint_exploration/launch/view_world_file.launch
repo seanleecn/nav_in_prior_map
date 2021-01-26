@@ -1,0 +1,27 @@
+<launch>
+    <!-- 在下面输入world的路径 -->
+    <!-- basic环境(室内,房屋模型,有家具等等) -->
+    <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/basic_v2.world" />
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/basic_v3.world" /> -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/basic_no_furniture.world" /> -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/basic.world" /> -->
+    <!-- office环境 -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/office_no_furniture.world" /> -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/office.world" /> -->
+    <!-- open环境(开放,类似停车场) -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/open_no_furniture.world" /> -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/open.world" /> -->
+    <!-- closed环境(paper中Fig7对应的存在关着的门的部分) -->
+    <!-- <arg name="gazebo_world_name" value="$(find blueprint_exploration)/worlds/closed.world" /> -->
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg gazebo_world_name)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="recording" value="false"/>
+        <arg name="debug" value="false"/>
+        <!-- <arg name="verbose" default="true"/> -->
+    </include>
+</launch>
